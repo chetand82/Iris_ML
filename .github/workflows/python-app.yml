@@ -38,6 +38,16 @@ jobs:
       run: |
         python main.py    
     - run: ls ${{ github.workspace }}
+
+    - name: Set up AWS credentials from OIDC
+      uses: aws-actions/configure-aws-credentials@v2
+      with:
+        role-to-assume: arn:aws:iam::430238166084:role/chetan_oidc_aws_github
+        role-session-name: GitHubActions
+        aws-region: us-east-1  # Specify your AWS region
+
+    - name: Example AWS CLI command
+      run: aws sagemaker list-clusters
             
     #- name: Test with pytest
      # run: |
