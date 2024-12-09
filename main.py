@@ -85,5 +85,5 @@ predictions = svn.predict(X_test)
 print (accuracy_score(y_test, predictions))
 
 # create an iterator object with write permission - model.pkl
-with open('model_pkl', 'wb') as files:
+with open('model_pkl_1', 'wb') as files:
     pickle.dump(svn, files)
