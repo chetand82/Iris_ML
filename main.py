@@ -65,7 +65,7 @@ plt.xticks(X_axis, columns[:4])
 plt.xlabel("Features")
 plt.ylabel("Value in cm.")
 plt.legend(bbox_to_anchor=(1.3,1))
-plt.show()
+#plt.show()
 """
 
 # Split the data to train and test dataset.
