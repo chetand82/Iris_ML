@@ -14,7 +14,7 @@ assumed_role = sts_client.assume_role(
     RoleArn='arn:aws:iam::430238166084:role/s3_role',  # Replace with your role ARN
     RoleSessionName='mltest'  # A name for the session
 )
-
+"""
 credentials = assumed_role['Credentials']   
 s3_client = boto3.client(
     's3',
@@ -27,7 +27,7 @@ s3_client = boto3.client(
 bucket_name = 'ml-iris-chetan' 
 #s3_client.download_file(bucket_name, 'iris.data.csv', '/home/chetan/Desktop/gitrepo/iris_ml/Iris_ML/iris.data.csv')
 #s3_client.download_file(bucket_name, 'iris.data.csv', '/home/chetan/Desktop/gitrepo/iris_ml/Iris_ML/iris_data.csv')
-
+"""
 """
 result = s3_client.list_buckets()
 for i in result['Buckets']:
