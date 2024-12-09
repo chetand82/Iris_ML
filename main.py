@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import pandas as pd
 from sklearn.metrics import accuracy_score
-import pickle
+import pickle5 as pickle
 #%matplotlib inline
 
 sts_client = boto3.client('sts')
