@@ -9,12 +9,13 @@ from sklearn.metrics import accuracy_score
 import pickle5 as pickle
 #%matplotlib inline
 
+"""
 sts_client = boto3.client('sts')
 assumed_role = sts_client.assume_role(
     RoleArn='arn:aws:iam::430238166084:role/s3_role',  # Replace with your role ARN
     RoleSessionName='mltest'  # A name for the session
 )
-"""
+
 credentials = assumed_role['Credentials']   
 s3_client = boto3.client(
     's3',
