@@ -1,0 +1,4 @@
+aws ecr get-login-password | docker login --username AWS --password-stdin 430238166084.dkr.ecr.us-east-1.amazonaws.com/svc-sagemaker-model
+
+docker tag svc-sagemaker-model:02 430238166084.dkr.ecr.us-east-1.amazonaws.com/svc-sagemaker-model:02
+docker push 430238166084.dkr.ecr.us-east-1.amazonaws.com/svc-sagemaker-model:02
