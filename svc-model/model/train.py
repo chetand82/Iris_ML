@@ -8,18 +8,31 @@ import joblib
 
 def train_model():
     # Load your dataset (replace with actual data loading)
-    X = pd.read_csv('train_features.csv')
-    y = pd.read_csv('train_labels.csv')
-    
+    #X = pd.read_csv('train_features.csv')
+    #y = pd.read_csv('train_labels.csv')
+
+### new changes adding to echl training job failure
+    df = pd.read_csv('s3://ml-iris-chetan/iris_data.csv')
+    data = df.values
+    X = data[:,0:4]
+    Y = data[:,4]
+
+### new changes adding to echl training job failure    
     # Preprocess data
     scaler = StandardScaler()
     X_scaled = scaler.fit_transform(X)
     
     # Split data
+    '''
     X_train, X_test, y_train, y_test = train_test_split(
         X_scaled, y, test_size=0.2, random_state=42
     )
-    
+    '''
+### new changes adding to echl training job failure    
+    X_train, X_test, y_train, y_test = train_test_split(
+        X, Y, test_size=0.2, random_state=42
+    )
+### new changes adding to echl training job failure    
     # Train SVC model
     svc = SVC(kernel='rbf', probability=True)
     svc.fit(X_train, y_train)

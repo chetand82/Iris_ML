@@ -1,11 +1,12 @@
-FROM python:3.9-slim
+FROM python:3.7-slim
 
 # Set working directory
 WORKDIR /opt/ml/code
 
 # Copy requirements and install dependencies
 COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install gunicorn flake8 pytest boto3 numpy matplotlib seaborn pandas scikit-metrics pickle5
+#RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy model training and serving scripts
 COPY model/train.py .
